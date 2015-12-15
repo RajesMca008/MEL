@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Morgans Electrical Ltd</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string-array name="jobs_names">
+        
+         <item>Prabhu</item>
+        <item>Jhon</item>
+        <item>Michel</item>
+        <item>Jackson</item>
+        <item>Robo</item>
+        
+    </string-array>
+
+    <string name="job_notes_title">SAVE AND RETURNS TO PREVIOUS PAGE</string>
+</resources>

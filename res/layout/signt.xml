@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!-- customer details -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/shape_white_spinner_gray"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8.7"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Customer Details"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.3"
+                        android:orientation="vertical" >
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+
+                                <TextView
+                                    android:id="@+id/signature_screen_cust_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="3dp"
+                                    android:text="Customer Name" />
+
+                                <TextView
+                                    android:id="@+id/signature_screen_site_contact_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_below="@+id/signature_screen_cust_phno"
+                                    android:layout_margin="3dp"
+                                    android:text="Site Contact :" />
+
+                                <TextView
+                                    android:id="@+id/signature_screen_cust_phno"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_below="@+id/signature_screen_cust_add"
+                                    android:layout_margin="3dp"
+                                    android:text="Phone No" />
+
+                                <TextView
+                                    android:id="@+id/signature_screen_cust_add"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_below="@+id/signature_screen_cust_name"
+                                    android:layout_margin="3dp"
+                                    android:text="Address" />
+
+                                <TextView
+                                    android:id="@+id/signature_screen_site_add"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_below="@+id/signature_screen_site_contact_label"
+                                    android:layout_margin="3dp"
+                                    android:text="Site Address :" />
+
+                                <TextView
+                                    android:id="@+id/signature_screen_site_phno"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_below="@+id/signature_screen_site_add"
+                                    android:layout_margin="3dp"
+                                    android:text="Site Phone No :" />
+
+                                <TextView
+                                    android:id="@+id/signature_screen_site_contact_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBaseline="@+id/signature_screen_site_contact_label"
+                                    android:layout_alignBottom="@+id/signature_screen_site_contact_label"
+                                    android:layout_toRightOf="@+id/signature_screen_site_add"
+                                    android:text="TextView" />
+
+                                <TextView
+                                    android:id="@+id/signature_screen_site_add_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBaseline="@+id/signature_screen_site_add"
+                                    android:layout_alignBottom="@+id/signature_screen_site_add"
+                                    android:layout_alignLeft="@+id/signature_screen_site_contact_txt"
+                                    android:text="TextView" />
+
+                                <TextView
+                                    android:id="@+id/signature_screen_site_phno_txt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignBaseline="@+id/signature_screen_site_phno"
+                                    android:layout_alignBottom="@+id/signature_screen_site_phno"
+                                    android:layout_toRightOf="@+id/signature_screen_site_phno"
+                                    android:text="TextView" />
+                            </RelativeLayout>
+                        </ScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- job desp -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/shape_white_spinner_gray"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="8.2"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Job Description :" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.8"
+                        android:orientation="vertical" >
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/signature_screen_job_desp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="dfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgj" />
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 3 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/shape_white_spinner_gray"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/extra_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Extras :" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical" >
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/extra_desp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="dfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgj" />
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 4 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/shape_white_spinner_gray"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/add_material_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Additional Materials :" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical" >
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/add_material_txt_desp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="dfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgj" />
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 5 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/shape_white_spinner_gray"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/items_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Items Not Completed :" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:orientation="vertical" >
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/items_not_complted_desp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="dfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgjdfgjfdgdgjdljgldjgldfjgldgdjfgjdjgdjgdgjdfgjdfjgj" />
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 6 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="1dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/signature_screen_start_time_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/darker_gray"
+                            android:text="START TIME"
+                            android:textColor="@android:color/white"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:background="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/signature_screen_first_time_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/darker_gray"
+                            android:text="FIRST TIME"
+                            android:textColor="@android:color/white"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:background="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/signature_screen_status_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/darker_gray"
+                            android:text="JOB STATUS"
+                            android:textColor="@android:color/white"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 7 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/signature_screen_job_complete_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/text_blue"
+                            android:text="JOB Complete ?"
+                            android:textColor="@android:color/white"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/signature_screen_yes_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                             android:background="@color/text_blue"
+                            android:text="Yes"
+                            android:textColor="@android:color/white"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@android:color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/signature_screen_no_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                              android:background="@color/text_blue"
+                            android:text="No"
+                            android:textColor="@android:color/white"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 8 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="vertical" >
+
+                   
+                </LinearLayout>
+            </LinearLayout>
+
+            
+              <!-- 9 -->
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:orientation="horizontal" >
+
+                    <!-- sig -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="horizontal" >
+                        
+                        <LinearLayout 
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/shape_white_spinner_gray"
+                            android:orientation="vertical">
+                            
+                            <LinearLayout 
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="8">
+                                
+                                
+                                 <TextView
+                                    android:id="@+id/signature_screen_signature"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Customer Signature"></TextView>
+                            
+                        </LinearLayout>
+                        
+                            
+                            <LinearLayout 
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_weight="2">
+                            
+                        </LinearLayout>
+                            
+                            
+                            
+                            
+                        </LinearLayout>
+                        
+                        
+                        
+                    </LinearLayout>
+
+                    <!-- save -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

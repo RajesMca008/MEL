@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="startday_color">#01DF01</color>
+    <color name="bg_color">#00BFFF</color>
+    <color name="endday_color">#FF0000</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_blue">#58D3F7</color>
+    <color name="button_gray">#A4A4A4</color>
+    <color name="static_text_color">#0B5095</color>
+    <color name="list_item_bg">#F8F8F8</color>
+    <color name="text_headlins">#A6A6A6</color>
+    
+    <color name="job_text_color">#B3EBA2</color>
+    <color name="job_start">#9AE9F6</color>
+
+</resources>
