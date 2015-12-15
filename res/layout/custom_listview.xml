@@ -53,6 +53,7 @@
                                     android:layout_alignParentLeft="true"
                                     android:layout_centerVertical="true"
                                     android:gravity="left|center_vertical"
+                                    android:textColor="@color/text_headlins"
                                     android:paddingLeft="5dp"
                                     android:text="Mrs Brown" />
                             </RelativeLayout>
@@ -75,6 +76,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentLeft="true"
                                     android:layout_centerVertical="true"
+                                    android:textColor="@color/text_headlins"
                                     android:gravity="left|center_vertical"
                                     android:paddingLeft="5dp"
                                     android:text="4 Rocky Road,Ampthil,MK452RH" />
@@ -101,6 +103,7 @@
                                     android:layout_centerVertical="true"
                                     android:gravity="left|center_vertical"
                                     android:paddingLeft="5dp"
+                                    android:textColor="@color/text_headlins"
                                     android:text="01525213013" />
                             </RelativeLayout>
                         </LinearLayout>
@@ -207,6 +210,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentLeft="true"
+                            android:textStyle="bold"
                             android:text="Estimate" />
                         
                     </RelativeLayout>
