@@ -109,6 +109,7 @@
                             android:layout_margin="5dp"
                             android:background="@drawable/month_btn"
                             android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textSize="20dp"
                             android:textColor="#FFFFFF" >
                         </Button>
                     </RelativeLayout>

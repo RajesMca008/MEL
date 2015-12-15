@@ -21,6 +21,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -425,7 +426,7 @@ public class SimpleCalendarViewActivity extends Activity implements
 
 			// ACCOUNT FOR SPACING
 
-			Log.d(tag, "Current Day: " + getCurrentDayOfMonth());
+			Log.d(tag, "Current Day: " + list.get(position));
 			String[] day_color = list.get(position).split("-");
 			String theday = day_color[0];
 			String themonth = day_color[2];
@@ -456,16 +457,19 @@ public class SimpleCalendarViewActivity extends Activity implements
 
 			if (day_color[1].equals("BLUE")) {
 				gridcell.setTextColor(getResources().getColor(R.color.static_text_color));
+				gridcell.setTextSize(18f);
+				gridcell.setTypeface(Typeface.DEFAULT_BOLD);
 			}
 			if (theday.equals(currentWeekDay) && !themonth.equals(currentMonth)) {
 				gridcell.setTextColor(Color.WHITE);
 			}
 
+			 
 			// if(theday.equals(c))
 
 			for (int i = 0; i < dates.size(); i++) {
 				String s = dates.get(i);
-				String d = s.substring(0, 2);
+				String d = s.substring(0, 2); 
 				String m = s.substring(3, s.lastIndexOf("-"));
 				String y = s.substring(s.lastIndexOf("-") + 1, s.length());
 
@@ -474,8 +478,11 @@ public class SimpleCalendarViewActivity extends Activity implements
 				if ((day1 == day2 && themonth.equals(m) && theyear.equals(y))) {
 					gridcell.setTextColor(Color.parseColor("#DC099A"));
 				}
+				
+				 
 			}
-
+			
+			
 			return row;
 		}
 
@@ -548,6 +555,9 @@ public class SimpleCalendarViewActivity extends Activity implements
 				holder.tvAddr = (TextView) view.findViewById(R.id.list_addr);
 				holder.tvPhno = (TextView) view.findViewById(R.id.list_phno);
 				holder.tvBlink = (TextView) view.findViewById(R.id.list_blink);
+				
+				holder.tvTime= (TextView) view.findViewById(R.id.tv_time);
+				holder.tvJobID= (TextView) view.findViewById(R.id.tv_job_no);
 				view.setTag(holder);
 			} else
 				holder = (ViewHolder) view.getTag();
@@ -555,6 +565,10 @@ public class SimpleCalendarViewActivity extends Activity implements
 			holder.tvName.setText(data.CustomerName);
 			holder.tvAddr.setText(data.SiteAddress);
 			holder.tvPhno.setText(data.SiteContactPhone);
+			
+			holder.tvTime.setText(data.StartDate);
+			holder.tvJobID.setText(data.JobNumber);
+			
 			if (data.IsCancellationFormRequired.equals("True")) {
 				holder.tvBlink.setVisibility(View.VISIBLE);
 				holder.tvBlink.setText("Cancel form");
@@ -568,6 +582,9 @@ public class SimpleCalendarViewActivity extends Activity implements
 		TextView tvAddr;
 		TextView tvPhno;
 		TextView tvBlink;
+		
+		TextView tvTime;
+		TextView tvJobID;
 	}
 
 	private class TodaysJobsTask extends AsyncTask {
