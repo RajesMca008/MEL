@@ -55,6 +55,7 @@
                                     android:textColor="@color/text_headlins"
                                     android:gravity="left|center_vertical"
                                     android:paddingLeft="5dp"
+                                    android:textStyle="bold"
                                     android:text="Mrs Brown" />
                             </RelativeLayout>
                         </LinearLayout>

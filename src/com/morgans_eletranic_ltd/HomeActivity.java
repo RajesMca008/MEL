@@ -240,6 +240,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 			ViewHolder holder = null;
 			JobsData data = jobsList.get(pos);
 
+			System.out.println("TEST rajesh");
 			if (view == null) {
 				holder = new ViewHolder();
 				view = getLayoutInflater().inflate(R.layout.custom_listview,

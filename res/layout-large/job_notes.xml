@@ -89,6 +89,7 @@
                        android:layout_centerHorizontal="true"
                        android:layout_centerVertical="true"
                        android:layout_margin="10dp"
+                       android:gravity="top"
                        android:background="@drawable/shape_white_spinner_gray"
                        android:ems="10" >
                       
