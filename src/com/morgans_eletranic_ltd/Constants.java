@@ -33,4 +33,8 @@ public class Constants {
 	public static String USER_ID = "";
 	public static String JOB_ID = "";
 	public static String CONTENT_TYPE = "application/json";
+	
+	
+	public static String SUPPLIERS_LIST = BASE_URL
+			+ "searchSuppliersBySupplierName?SupplierName";
 }
