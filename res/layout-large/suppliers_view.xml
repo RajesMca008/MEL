@@ -1,18 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:text="Suppliers Page"
-        android:textSize="25dp" />
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <!-- 1 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.9"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal" android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:background="@color/text_blue"
+                android:minHeight="150dp"
+                android:layout_height="match_parent" >
+
+                <EditText
+                    android:id="@+id/supplier_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                      android:textColor="@color/text_headlins"
+                    android:layout_weight="0.9"
+                    android:singleLine="true"
+                    android:background="@drawable/shape_white_spinner_gray" >
+                </EditText>
+
+                <ImageButton
+                    android:id="@+id/but_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                     android:layout_weight="0.1"
+                       android:layout_margin="2dp"
+                   android:src="@android:drawable/ic_menu_search"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 2 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:orientation="vertical" >
+                      <ListView
+                            android:id="@+id/homescreen_listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:background="#ffffff"
+                            android:divider="#ffffff"
+                            android:dividerHeight="5dp" >
+                        </ListView>
+            
+        </LinearLayout>
+
+        
+         
+    </LinearLayout>
 
 </LinearLayout>
