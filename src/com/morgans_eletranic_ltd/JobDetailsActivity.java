@@ -182,7 +182,10 @@ public class JobDetailsActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				new GetJobFilesTask().execute();
+				//new GetJobFilesTask().execute();
+
+Intent intent=new Intent(JobDetailsActivity.this,AddJobFiles.class);
+startActivity(intent);
 			}
 		});
 
