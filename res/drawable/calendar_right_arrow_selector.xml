@@ -2,10 +2,10 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 	<item
 		android:state_pressed="true"
-		android:drawable="@drawable/next_month_off" /> <!-- pressed -->
+		android:drawable="@drawable/ic_hardware_keyboard_arrow_right_p" /> <!-- pressed -->
 	<item
 		android:state_focused="true"
-		android:drawable="@drawable/next_month_off" /> <!-- focused -->
+		android:drawable="@drawable/ic_hardware_keyboard_arrow_right_p" /> <!-- focused -->
 	<item
-		android:drawable="@drawable/next_month_on" /> <!-- default -->
+		android:drawable="@drawable/ic_hardware_keyboard_arrow_right" /> <!-- default -->
 </selector>
