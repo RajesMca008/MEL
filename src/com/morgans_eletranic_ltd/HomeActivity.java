@@ -3,6 +3,7 @@ package com.morgans_eletranic_ltd;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -215,6 +216,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 
 	class MyAdapter extends BaseAdapter {
 
+		SimpleDateFormat dateFormat = new SimpleDateFormat("h:mm a");
 		@Override
 		public int getCount() {
 			if (jobsList.size() > 0)
@@ -240,7 +242,6 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 			ViewHolder holder = null;
 			JobsData data = jobsList.get(pos);
 
-			System.out.println("TEST rajesh");
 			if (view == null) {
 				holder = new ViewHolder();
 				view = getLayoutInflater().inflate(R.layout.custom_listview,
@@ -260,8 +261,9 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 			holder.tvName.setText(data.CustomerName);
 			holder.tvAddr.setText(data.SiteAddress);
 			holder.tvPhno.setText(data.SiteContactPhone);
-			
-			holder.tvTime.setText(data.StartDate);
+		
+			 
+			holder.tvTime.setText(data.StartDate.split(" ")[1]);
 			holder.tvJobID.setText(data.JobNumber);
 			Log.e("cancel", data.IsCancellationFormRequired);
 			if (data.IsCancellationFormRequired.equals("True")) {

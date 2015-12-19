@@ -136,7 +136,8 @@
                             android:layout_weight="1"
                             android:orientation="horizontal" >
 
-
+                         <!--     <ImageView  android:background="@color/job_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_lock_idle_alarm"/>
+ -->
                                 <TextView
                                    
                                    android:background="@color/job_start"
@@ -202,7 +203,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_toRightOf="@+id/textView1"
-                            android:src="@drawable/img_next" />
+                            android:src="@drawable/calendar_right_arrow_selector" />
 
                         <TextView
                             android:id="@+id/textView2"
@@ -210,7 +211,9 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentLeft="true"
-                            android:textStyle="bold"
+                            android:padding="2dp"
+                            android:textColor="@color/text_headlins"
+                            android:background="#9A2EFE"
                             android:text="Estimate" />
                         
                     </RelativeLayout>

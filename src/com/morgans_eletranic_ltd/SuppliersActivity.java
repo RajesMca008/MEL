@@ -20,6 +20,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,7 +45,7 @@ public class SuppliersActivity extends BaseActivity implements OnClickListener {
 		
         final EditText searchView=(EditText)findViewById(R.id.supplier_search);
         
-        ImageButton button=(ImageButton)findViewById(R.id.but_search);
+        ImageView button=(ImageView)findViewById(R.id.but_search);
         button.setOnClickListener(new OnClickListener() {
 			
 			@Override

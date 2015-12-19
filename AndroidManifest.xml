@@ -42,7 +42,7 @@
             android:name="com.morgans_eletranic_ltd.MaterialsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.morgans_eletranic_ltd.SuppliersActivity"
+            android:name="com.morgans_eletranic_ltd.SuppliersActivity"  android:windowSoftInputMode="adjustNothing"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.morgans_eletranic_ltd.MelFormsActivity"

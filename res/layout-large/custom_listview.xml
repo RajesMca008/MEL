@@ -204,7 +204,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_toRightOf="@+id/textView1"
-                            android:src="@drawable/img_next" />
+                            android:src="@drawable/calendar_right_arrow_selector" />
 
                         <TextView
                             android:id="@+id/textView2"
@@ -212,7 +212,9 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentLeft="true"
-                            android:textStyle="bold"
+                            android:textColor="@color/text_headlins"
+                            android:padding="2dp"
+                            android:background="#9A2EFE"
                             android:text="Estimate" />
                         
                     </RelativeLayout>

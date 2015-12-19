@@ -62,7 +62,7 @@
                             
                             android:text="20th Jul"
                             android:textColor="@color/text_blue"
-                            android:textSize="17dp" /> 
+                            android:textSize="20dp" /> 
                             
                         <TextView
                             android:id="@+id/text_time"

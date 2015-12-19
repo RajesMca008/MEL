@@ -452,13 +452,16 @@ public class SimpleCalendarViewActivity extends Activity implements
 				gridcell.setTextColor(Color.LTGRAY);
 			}
 			if (day_color[1].equals("WHITE")) {
-				gridcell.setTextColor(Color.WHITE);
+				gridcell.setTextColor(Color.BLACK);
 			}
 
 			if (day_color[1].equals("BLUE")) {
 				gridcell.setTextColor(getResources().getColor(R.color.static_text_color));
 				gridcell.setTextSize(18f);
 				gridcell.setTypeface(Typeface.DEFAULT_BOLD);
+				gridcell.setBackgroundColor(Color.parseColor("#A4A4A4"));
+				System.out.println("TEST Current data"+theday);
+				 onClick(gridcell);
 			}
 			if (theday.equals(currentWeekDay) && !themonth.equals(currentMonth)) {
 				gridcell.setTextColor(Color.WHITE);
@@ -668,6 +671,7 @@ public class SimpleCalendarViewActivity extends Activity implements
 			e.printStackTrace();
 		}
 	}
+	 
 
 	private void blink() {
 		final Handler handler = new Handler();

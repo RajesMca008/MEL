@@ -282,12 +282,13 @@
 
             <Button
                 android:id="@+id/dialogButtonOK"
-                android:layout_width="100px"
+                android:layout_width="150px"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
                 android:minWidth="250dp"
+                 android:background="@color/text_blue"
                 android:text=" Ok " />
         </LinearLayout>
     </LinearLayout>
