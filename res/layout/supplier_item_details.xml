@@ -262,6 +262,7 @@
                                 android:layout_weight="0.5"
                                 android:gravity="left|center_vertical"
                                 android:paddingLeft="5dp"
+                                android:autoLink="phone"
                                 android:text="01525213013"
                                 android:textColor="@color/text_headlins"
                                  android:textSize="15dp" />
@@ -284,8 +285,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="5dp"
+                 android:background="@color/text_blue"
                 android:minWidth="250dp"
-                android:background="@color/text_blue"
                 android:text=" Ok " />
         </LinearLayout>
     </LinearLayout>

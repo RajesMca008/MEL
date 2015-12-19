@@ -265,7 +265,8 @@
                                 android:layout_weight="0.5"
                                 android:gravity="left|center_vertical"
                                 android:paddingLeft="5dp"
-                                android:text="01525213013"
+                                 android:autoLink="phone"
+                                android:text="--"
                                 android:textColor="@color/text_headlins"
                                 android:textSize="18dp" />
                         </LinearLayout>
