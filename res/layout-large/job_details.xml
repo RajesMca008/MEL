@@ -366,6 +366,16 @@
                         android:background="@drawable/shape_white_spinner_gray"
                         android:orientation="vertical" >
 
+                        <Button
+                            android:id="@+id/add_estimate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@color/text_blue"
+                            android:textColor="@color/text_white"
+                            android:minHeight="45dp"
+                            android:text="@string/estimate" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -390,10 +400,10 @@
                                         android:layout_alignParentTop="true"
                                         android:layout_centerHorizontal="true"
                                         android:layout_margin="2dp"
-                                         android:gravity="center"
+                                        android:background="@drawable/ic_communication_messenger"
+                                        android:gravity="center"
                                         android:text="Job Notes"
-                                        android:textColor="@color/text_white"
-                                        android:background="@drawable/ic_communication_messenger" />
+                                        android:textColor="@color/text_white" />
                                 </RelativeLayout>
                             </LinearLayout>
 
@@ -416,10 +426,10 @@
                                         android:layout_alignParentTop="true"
                                         android:layout_centerHorizontal="true"
                                         android:layout_margin="2dp"
-                                         android:gravity="center"
+                                        android:background="@drawable/ic_communication_messenger"
+                                        android:gravity="center"
                                         android:text="Add New Notes"
-                                         android:textColor="@color/text_white"
-                                        android:background="@drawable/ic_communication_messenger" />
+                                        android:textColor="@color/text_white" />
                                 </RelativeLayout>
                             </LinearLayout>
 
@@ -442,10 +452,10 @@
                                         android:layout_alignParentTop="true"
                                         android:layout_centerHorizontal="true"
                                         android:layout_margin="2dp"
+                                        android:background="@drawable/ic_communication_messenger"
                                         android:gravity="center"
-                                       android:text="View/Add Job Files"
-                                        android:textColor="@color/text_white"
-                                        android:background="@drawable/ic_communication_messenger" />
+                                        android:text="View/Add Job Files"
+                                        android:textColor="@color/text_white" />
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>

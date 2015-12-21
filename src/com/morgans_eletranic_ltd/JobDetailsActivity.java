@@ -33,7 +33,7 @@ import com.morgans_eletranic_ltd.data.JobsData;
 
 public class JobDetailsActivity extends Activity {
 
-	private EditText edtJobDesc = null, edtBrifDesc = null;
+	private EditText detail_description = null, short_description = null;
 	private JobsData jobData = null;
 	private ListView listView = null;
 	private TextView tvName, tvAddr, tvPhno, tvSiteContact, tvJobID;
@@ -60,8 +60,8 @@ public class JobDetailsActivity extends Activity {
 
 	private void initRef() {
 		jobData = Utils.getTodayJobsData();
-		edtJobDesc = (EditText) findViewById(R.id.edt_job_desc);
-		edtBrifDesc = (EditText) findViewById(R.id.edt_shot_job_desc);
+		detail_description = (EditText) findViewById(R.id.edt_shot_job_desc); // Id changed 
+		short_description = (EditText) findViewById( R.id.edt_job_desc);// Id changed 
 		tvName = (TextView) findViewById(R.id.tvJobs_name);
 		tvAddr = (TextView) findViewById(R.id.tvJobs_addr);
 		tvPhno = (TextView) findViewById(R.id.tvJobs_phno);
@@ -70,6 +70,18 @@ public class JobDetailsActivity extends Activity {
 
 		tvName.setText(jobData.CustomerName);
 		tvAddr.setText(jobData.SiteAddress);
+		
+		Button addEstimate=(Button)findViewById(R.id.add_estimate);
+		
+		addEstimate.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(JobDetailsActivity.this,EstimateActivity.class);
+				startActivity(intent);
+			}
+		});
 
 		if (TextUtils.isEmpty(jobData.SiteContactPhone))
 			tvPhno.setText("phone number not added");
@@ -80,14 +92,14 @@ public class JobDetailsActivity extends Activity {
 		tvJobID.setText("Job Number: " + jobData.JobNumber);
 
 		if (jobData.JobDescription.equals("null"))
-			edtJobDesc.setText("");
+			detail_description.setText("");
 		else
-			edtJobDesc.setText(jobData.JobDescription);
+			detail_description.setText(jobData.JobDescription);
 
 		if (jobData.BriefJobDescription.equals("null"))
-			edtBrifDesc.setText("");
+			short_description.setText("");
 		else
-			edtBrifDesc.setText(jobData.BriefJobDescription);
+			short_description.setText(jobData.BriefJobDescription);
 
 		startJob = (Button) findViewById(R.id.btn_jobdetails_startjob);
 		endJob = (Button) findViewById(R.id.bt4);

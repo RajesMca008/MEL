@@ -79,6 +79,7 @@
                                     android:layout_centerVertical="true"
                                     android:layout_margin="5dp"
                                     android:ems="10"
+                                    android:singleLine="true"
                                     android:hint="Username" >
                                 </EditText>
                             </RelativeLayout>
@@ -104,6 +105,7 @@
                                     android:layout_centerVertical="true"
                                     android:layout_margin="5dp"
                                     android:ems="10"
+                                    android:singleLine="true"
                                     android:hint="Password"
                                     android:inputType="textPassword" />
                             </RelativeLayout>

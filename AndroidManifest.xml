@@ -58,6 +58,8 @@
             android:screenOrientation="portrait" 
               android:theme="@android:style/Theme.Light.NoTitleBar"/>
         <activity android:name="com.morgans_eletranic_ltd.AddJobFiles"   android:screenOrientation="portrait"   android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="EstimateActivity"  android:windowSoftInputMode="adjustNothing"  android:screenOrientation="landscape" 
+              android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
     </application>
 
 </manifest>

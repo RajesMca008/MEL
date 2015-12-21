@@ -8,7 +8,6 @@ import java.util.Locale;
 
 import android.app.Activity;
 import android.content.SharedPreferences.Editor;
-import android.text.format.DateFormat;
 import android.widget.Toast;
 
 import com.morgans_eletranic_ltd.data.JobsData;

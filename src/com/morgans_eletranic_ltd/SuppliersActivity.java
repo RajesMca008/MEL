@@ -236,8 +236,8 @@ public class SuppliersActivity extends BaseActivity implements OnClickListener {
 			} else
 				holder = (ViewHolder) view.getTag();
 
-			holder.spContact.setText(Html.fromHtml("<b>ContactName : </b>"+result.get(pos).getContactName()));
-			   holder.spName.setText(Html.fromHtml("<b>SupplierName: </b>"+result.get(pos).getSupplierName()));
+			holder.spContact.setText(Html.fromHtml("<b>Contact Name : </b>"+result.get(pos).getContactName()));
+			   holder.spName.setText(Html.fromHtml("<b>Supplier Name: </b>"+result.get(pos).getSupplierName()));
 			  holder.spEmail.setText(Html.fromHtml("<b>Email       : </b>"+result.get(pos).getEmail()));
 		  holder.spTelephone.setText(Html.fromHtml("<b>Telephone   : </b>"+result.get(pos).getTelephone()));
 			 
