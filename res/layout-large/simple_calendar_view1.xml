@@ -95,17 +95,18 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="5"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
                     android:orientation="horizontal" >
 
-                    <RelativeLayout
+                    <RelativeLayout  android:gravity="center_vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" >
 
                         <Button
                             android:id="@+id/currentMonth"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:background="@drawable/month_btn"
                             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -228,7 +229,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
+            android:layout_weight="6"
             android:orientation="vertical" >
 
             <RelativeLayout
@@ -252,7 +253,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="8"
+            android:layout_weight="7"
             android:orientation="vertical" >
 
             <RelativeLayout

@@ -38,7 +38,7 @@
                     android:layout_weight="0.9"
                     android:singleLine="true"
                     android:textSize="14dp"
-                    android:hint="Enter the supplier name and press search icon"
+                    android:hint="@string/serch_hint"
                     android:textColor="@android:color/black"
                     android:background="@drawable/shape_white_spinner_gray" >
                 </EditText>

@@ -14,12 +14,16 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.morgans_eletranic_ltd.data.Data;
@@ -65,7 +69,23 @@ public class EstimateActivity  extends BaseActivity {
 			}
 		});
 
+		
+		materialListView.setOnItemLongClickListener(new OnItemLongClickListener() {
 
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+				Toast.makeText(act, "Menu",Toast.LENGTH_LONG).show();
+				
+				AlertDialog.Builder alert = new AlertDialog.Builder(act);
+				
+				alert.setTitle("Product details");
+				alert.setView(View.inflate(act, R.layout.product_details, null));
+				
+				alert.show();
+				return false;
+			}
+		});
 	}
 	
 	
@@ -107,6 +127,20 @@ public class EstimateActivity  extends BaseActivity {
 			else{
 				view=convertView;
 			}
+			
+			TextView prod_name=(TextView)view.findViewById(R.id.prod_name);
+			TextView prod_price=(TextView)view.findViewById(R.id.prod_price);
+			TextView prod_qty=(TextView)view.findViewById(R.id.prod_qty);
+			TextView prod_margin=(TextView)view.findViewById(R.id.prod_margin);
+			TextView prod_salePrice=(TextView)view.findViewById(R.id.prod_salePrice);
+			TextView prod_total=(TextView)view.findViewById(R.id.prod_total);
+			
+			prod_name.setText(addMaterialsList.get(position).Productname);
+			prod_price.setText("£"+addMaterialsList.get(position).CostPrice);
+			prod_qty.setText("1");//Default int
+			prod_margin.setText(""+addMaterialsList.get(position).Margin);
+			prod_salePrice.setText(""+addMaterialsList.get(position).MarginPrice);
+			prod_total.setText(""+(Float.parseFloat(prod_qty.getText().toString())*(Float.parseFloat(addMaterialsList.get(position).CostPrice))+Float.parseFloat(addMaterialsList.get(position).MarginPrice)));
 			return view;
 		}
 		
@@ -242,7 +276,7 @@ public class EstimateActivity  extends BaseActivity {
 			@Override
 			public void onClick(DialogInterface dialog, int pos) {
 				
-				addMaterialsList.clear();
+				//addMaterialsList.clear();
 				for (int i = 0; i < boolArray1.length; i++) {
 					if (boolArray1[i] == true) {
 						//str = str + items1[i] + "\n";

@@ -343,7 +343,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:background="@drawable/shape_white_edittext"
                                     android:ems="10"
-                                    android:enabled="false"
+                                  
                                     android:gravity="top"
                                     android:hint="" >
                                 </EditText>

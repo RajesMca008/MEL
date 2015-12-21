@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.morgans_eletranic_ltd.data.Data;
 
@@ -151,5 +153,17 @@ public class LoginActivity extends Activity {
 			}
 		}
 
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		 
+		 switch (keyCode) {    
+	        case KeyEvent.KEYCODE_ENTER:
+	           Toast.makeText(act, "TEST",Toast.LENGTH_LONG).show();
+	        break;
+	    }
+		 
+		return super.onKeyDown(keyCode, event);
 	}
 }

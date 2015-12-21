@@ -50,23 +50,45 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="0.1"
-                android:background="@drawable/shape_white_spinner_gray"
+                android:background="@color/text_headlins"
                 android:src="@android:drawable/ic_menu_search" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_below="@id/serch_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_below="@id/serch_layout"
+        android:orientation="vertical"
+        android:weightSum="1" >
 
-        <include  layout="@layout/header_estimation"/>
-        <ListView
-            android:id="@+id/material_list_view"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </ListView>
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" >
+
+            <include android:id="@+id/header_layout" layout="@layout/header_estimation" />
+
+            <ListView
+                android:layout_below="@id/header_layout"
+                android:id="@+id/material_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.5" >
+
+            <ListView
+                android:id="@+id/labor_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </ListView>
+        </RelativeLayout>
     </LinearLayout>
 
 </RelativeLayout>

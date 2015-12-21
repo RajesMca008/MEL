@@ -7,54 +7,109 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="5" >
+        android:weightSum="6" >
 
         <LinearLayout
-            android:layout_width="match_parent"  android:gravity="center"
-            android:layout_height="wrap_content" android:weightSum="4"
-            android:layout_weight="1" android:orientation="vertical">
-            <TextView android:singleLine="true" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Powerworks"/>
-            <TextView android:singleLine="true" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1G 400W ROTARY DIMMER"/>
-            <TextView android:singleLine="true" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="WNDR1/400R"/>
-            <TextView android:singleLine="true" android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MESC150004"/>
-        </LinearLayout>
-
-        <LinearLayout android:weightSum="3"
-            android:layout_width="match_parent"  android:gravity="center"
-            android:layout_height="wrap_content" android:orientation="vertical"
-            android:layout_weight="1" >
-            <TextView android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="£11.84"/>
-             <TextView android:layout_weight="1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="X"/>
-            <EditText android:layout_weight="1" android:singleLine="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:weightSum="2" android:orientation="vertical"
-            android:layout_width="match_parent"  android:gravity="center"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" >
-            <TextView android:layout_weight="1" android:singleLine="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="£2.37"/>
-            <EditText android:layout_weight="1" android:singleLine="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="20"/>
-        </LinearLayout>
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+              >
 
-        <LinearLayout android:orientation="vertical"
-            android:layout_width="match_parent"  android:gravity="center"
-             android:weightSum="2"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" >
-             <TextView android:layout_weight="1" android:singleLine="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="£14.21"/>
-              <TextView android:layout_weight="1" android:singleLine="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="£14.21"/>
+            <TextView
+                android:id="@+id/prod_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="1G 400W ROTARY DIMMER" />
+
+           
         </LinearLayout>
         
-         <LinearLayout android:orientation="vertical"
+        
+         <LinearLayout
             android:layout_width="match_parent"
-             android:weightSum="2"  android:gravity="center"
             android:layout_height="wrap_content"
-            android:layout_weight="1" >
-              <Button android:layout_margin="1dp" android:text="Update" android:layout_width="match_parent" android:textColor="@color/text_white" android:background="@color/text_blue" android:layout_height="wrap_content"/>
-               <Button android:layout_margin="1dp"  android:text="Delete" android:layout_width="match_parent" android:textColor="@color/text_white" android:background="@color/text_blue" android:layout_height="wrap_content"/>
-              </LinearLayout>
+            android:gravity="center"
+             android:layout_weight="1"
+            android:orientation="vertical"
+              >
+              <TextView
+                android:id="@+id/prod_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="£11.84" />
+        </LinearLayout>
+             
+             
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="3" >
+
+            <TextView
+                android:id="@+id/prod_qty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="£11.84" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/prod_salePrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="20" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/prod_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="£2.37" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/prod_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="£14.21" />
+        </LinearLayout>
+
+       
     </LinearLayout>
 
 </RelativeLayout>
