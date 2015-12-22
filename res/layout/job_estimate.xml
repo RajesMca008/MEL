@@ -67,13 +67,15 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5" >
 
-            <include android:id="@+id/header_layout" layout="@layout/header_estimation" />
+            <include
+                android:id="@+id/header_layout"
+                layout="@layout/header_estimation" />
 
             <ListView
-                android:layout_below="@id/header_layout"
                 android:id="@+id/material_list_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_below="@id/header_layout" >
             </ListView>
         </RelativeLayout>
 
@@ -83,10 +85,53 @@
             android:layout_marginTop="5dp"
             android:layout_weight="0.5" >
 
+            <LinearLayout
+                android:id="@+id/header_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/text_blue"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/head_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:text="Add Labour"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Labour Category"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_labourtype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/labour_type_list" />
+                </LinearLayout>
+
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    layout="@layout/labour_estimate_header" />
+            </LinearLayout>
+
             <ListView
                 android:id="@+id/labor_list_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_below="@id/header_layout2" >
             </ListView>
         </RelativeLayout>
     </LinearLayout>

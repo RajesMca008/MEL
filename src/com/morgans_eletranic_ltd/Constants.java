@@ -27,6 +27,7 @@ public class Constants {
 	public static String START_JOB = BASE_URL + "saveJobStartTime?JobID=";
 	public static String END_JOB = BASE_URL + "saveJobEndTime?JobID=";
 	public static String UPLOAD_NOTES = BASE_URL + "saveJobNotes?";
+	public static String VIEW_LABOURS= BASE_URL +"viewLabours?LabourType";
 	public static boolean isEngineer = false;
 	public static boolean isSupervisor = false;
 	public static boolean LOGIN_STATUS = false;

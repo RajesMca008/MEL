@@ -3,19 +3,27 @@
 
     <string name="app_name">Morgans Electrical Ltd</string>
     <string name="hello_world">Hello world!</string>
-    
+
     <string-array name="jobs_names">
-        
-         <item>Prabhu</item>
+        <item>Prabhu</item>
         <item>Jhon</item>
         <item>Michel</item>
         <item>Jackson</item>
         <item>Robo</item>
-        
     </string-array>
 
     <string name="job_notes_title">SAVE AND RETURNS TO PREVIOUS PAGE</string>
     <string name="take_pic">Take picture</string>
     <string name="estimate">Add Estimate</string>
     <string name="serch_hint">Enter the supplier name and press search icon</string>
+
+    <string-array name="labour_type_list">
+        <item>Select Labour Type</item>
+        <item>Administrator</item>
+        <item>Engineer</item>
+        <item>Supervisor</item>
+        <item>Contractor</item>
+        <item>Sub Contractor</item>
+    </string-array>
+
 </resources>

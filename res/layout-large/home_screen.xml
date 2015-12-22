@@ -354,6 +354,7 @@
                                     android:layout_height="60dp"
                                     android:layout_alignParentTop="true"
                                     android:layout_centerHorizontal="true"
+                                    android:visibility="gone"
                                     android:text="Others" />
                             </RelativeLayout>
                         </LinearLayout>
@@ -376,6 +377,7 @@
                                     android:layout_height="60dp"
                                     android:layout_alignParentTop="true"
                                     android:layout_centerHorizontal="true"
+                                     android:visibility="gone"
                                     android:text="More" />
                             </RelativeLayout>
                         </LinearLayout>
