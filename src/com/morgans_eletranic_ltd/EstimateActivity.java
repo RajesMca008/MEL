@@ -14,11 +14,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -35,10 +35,8 @@ public class EstimateActivity  extends BaseActivity {
 	private ArrayList<MaterialsData> arrMaterials = new ArrayList<MaterialsData>();
 	private ArrayList<MaterialsData> addMaterialsList = new ArrayList<MaterialsData>();
 	private String[] items = null, items1 = null;
-	private boolean[] bools = null;
 	//private EditText edtMaterials = null;
 	private ArrayList<String> listString = new ArrayList<String>();
-	private EditText edtSearch;
 	private String str = "";
 
 	private RelativeLayout layout;
@@ -55,7 +53,7 @@ public class EstimateActivity  extends BaseActivity {
 
 		seaerchMaterial=(EditText)findViewById(R.id.material_search);
 		searchButton=(ImageView) findViewById(R.id.but_search);
-		
+
 		materialListView=(ListView)findViewById(R.id.material_list_view);
 		materialAdapter=new MyMaterilaAdapter();
 		materialListView.setAdapter(materialAdapter);
@@ -69,26 +67,90 @@ public class EstimateActivity  extends BaseActivity {
 			}
 		});
 
-		
+
 		materialListView.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				Toast.makeText(act, "Menu",Toast.LENGTH_LONG).show();
-				
-				AlertDialog.Builder alert = new AlertDialog.Builder(act);
-				
-				alert.setTitle("Product details");
-				alert.setView(View.inflate(act, R.layout.product_details, null));
-				
-				alert.show();
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(act);
+
+
+				final AlertDialog dialog = builder.create();
+
+				dialog.setIcon(R.drawable.morgans_logo_icon);
+				dialog.setTitle("Product details");
+				View detailsView=View.inflate(act, R.layout.product_details, null);
+				dialog.setView(detailsView);
+
+				final EditText qty=(EditText)detailsView.findViewById(R.id.et_prod_qty);
+
+				final EditText et_prod_margin=(EditText)detailsView.findViewById(R.id.et_prod_margin);
+				String prodQty=((TextView)arg1.findViewById(R.id.prod_qty)).getText().toString();
+				qty.setText(prodQty);
+
+				et_prod_margin.setText(((MaterialsData)arg1.getTag()).Margin);
+
+
+				Button but_update=(Button)detailsView.findViewById(R.id.but_update);
+				but_update.setTag(arg1.getTag());
+				Button but_delete=(Button)detailsView.findViewById(R.id.but_delete);
+				Button but_cancel=(Button)detailsView.findViewById(R.id.but_cancel);
+
+				but_update.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						if(qty.getText().toString().length()>0 && et_prod_margin.getText().toString().length()>0)
+						{
+							((MaterialsData)v.getTag()).qty=qty.getText().toString();
+							((MaterialsData)v.getTag()).Margin=et_prod_margin.getText().toString();
+							//Toast.makeText(act, "TEST" +((MaterialsData)v.getTag()).Productname, Toast.LENGTH_LONG).show();
+
+							materialAdapter.notifyDataSetChanged();
+							dialog.dismiss();
+						}
+						else{
+							if(qty.getText().toString().length()==0)
+								qty.setError("Invalid");
+							if(et_prod_margin.getText().toString().length()==0)
+								et_prod_margin.setError("Invalid");
+						}
+
+					}
+				});
+				but_delete.setTag(arg1.getTag());
+				but_delete.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						addMaterialsList.remove(((MaterialsData)v.getTag()).index);
+						materialAdapter.notifyDataSetChanged();
+						dialog.dismiss();
+
+					}
+				});
+				but_cancel.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						dialog.dismiss();
+					}
+				});
+
+				dialog.show();
+
 				return false;
 			}
 		});
 	}
-	
-	
+ 
+
 	class MyMaterilaAdapter extends BaseAdapter
 	{
 
@@ -117,33 +179,37 @@ public class EstimateActivity  extends BaseActivity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// TODO Auto-generated method stub
-			
+
 			View view=null;
 			if(convertView ==null)
 			{
 				view = getLayoutInflater().inflate(R.layout.estimated_item_view,
 						null);
+
+				view.setTag(addMaterialsList.get(position));
+
 			}
 			else{
 				view=convertView;
 			}
-			
+
 			TextView prod_name=(TextView)view.findViewById(R.id.prod_name);
 			TextView prod_price=(TextView)view.findViewById(R.id.prod_price);
 			TextView prod_qty=(TextView)view.findViewById(R.id.prod_qty);
 			TextView prod_margin=(TextView)view.findViewById(R.id.prod_margin);
 			TextView prod_salePrice=(TextView)view.findViewById(R.id.prod_salePrice);
 			TextView prod_total=(TextView)view.findViewById(R.id.prod_total);
-			
+
 			prod_name.setText(addMaterialsList.get(position).Productname);
 			prod_price.setText("£"+addMaterialsList.get(position).CostPrice);
-			prod_qty.setText("1");//Default int
+			prod_qty.setText(addMaterialsList.get(position).qty);//Default int
 			prod_margin.setText(""+addMaterialsList.get(position).Margin);
 			prod_salePrice.setText(""+addMaterialsList.get(position).MarginPrice);
 			prod_total.setText(""+(Float.parseFloat(prod_qty.getText().toString())*(Float.parseFloat(addMaterialsList.get(position).CostPrice))+Float.parseFloat(addMaterialsList.get(position).MarginPrice)));
+			addMaterialsList.get(position).index=position;
 			return view;
 		}
-		
+
 	}
 
 
@@ -241,8 +307,8 @@ public class EstimateActivity  extends BaseActivity {
 		listString.clear();
 		listString = new ArrayList<String>();
 		for (int i = 0; i < items.length; i++) {
-			 
-				listString.add(items[i]);
+
+			listString.add(items[i]);
 		}
 
 		items1 = null;
@@ -258,7 +324,18 @@ public class EstimateActivity  extends BaseActivity {
 
 		AlertDialog.Builder alert = new AlertDialog.Builder(act);
 		alert.setTitle("Select Your Materials");
-		alert.setMultiChoiceItems(items1, boolArray1,
+		alert.setSingleChoiceItems(items1, -1, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				for (int i = 0; i < boolArray1.length; i++) {
+					boolArray1[i]=false;
+				}
+				boolArray1[which] = true;
+			}
+		});
+		/*alert.setMultiChoiceItems(items1, boolArray1,
 				new DialogInterface.OnMultiChoiceClickListener() {
 
 			@Override
@@ -269,23 +346,23 @@ public class EstimateActivity  extends BaseActivity {
 				else
 					boolArray1[pos] = false;
 			}
-		});
+		});*/
 		alert.setPositiveButton("ADD ITEMS",
 				new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int pos) {
-				
+
 				//addMaterialsList.clear();
 				for (int i = 0; i < boolArray1.length; i++) {
 					if (boolArray1[i] == true) {
 						//str = str + items1[i] + "\n";
-						
+
 						addMaterialsList.add(arrMaterials.get(i));
 					}
 				}
 				materialAdapter.notifyDataSetChanged();
-				Toast.makeText(act, "Selected itesm"+addMaterialsList.size(), Toast.LENGTH_LONG).show();
+				//Toast.makeText(act, "Selected itesm"+addMaterialsList.size(), Toast.LENGTH_LONG).show();
 				Log.e("str", str);
 				//edtMaterials.setText(str);
 			}

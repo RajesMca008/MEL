@@ -23,4 +23,6 @@ public class MaterialsData {
 	public String UpdatedBy = "";
 	public String UpdatedOn = "";
 	public String WarrentyTerm = "";
+	public String qty="1";
+	public int index=0;
 }
