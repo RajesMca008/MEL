@@ -1,7 +1,6 @@
 package com.morgans_eletranic_ltd;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -67,6 +66,8 @@ public class EstimateActivity  extends BaseActivity {
 		seaerchMaterial=(EditText)findViewById(R.id.material_search);
 		searchButton=(ImageView) findViewById(R.id.but_search);
 		
+		Button saveButton = (Button)findViewById(R.id.bt_save_exit);
+		
 		labourSpinner=(Spinner)findViewById(R.id.sp_labourtype);
 		
 		
@@ -80,6 +81,17 @@ public class EstimateActivity  extends BaseActivity {
 			public void onClick(View v) {
 				new MaterialTask().execute(seaerchMaterial.getText().toString());
 
+			}
+		});
+		
+		
+		saveButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Toast.makeText(act, "Data saved!", Toast.LENGTH_LONG).show();
+				finish();
+				
 			}
 		});
 		
@@ -192,6 +204,108 @@ public class EstimateActivity  extends BaseActivity {
 				return false;
 			}
 		});
+		
+		
+		labourListView.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+				// TODO Auto-generated method stub
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(act);
+
+
+				final AlertDialog dialog = builder.create();
+
+				dialog.setIcon(R.drawable.morgans_logo_icon);
+				dialog.setTitle("Labour details");
+				View detailsView=View.inflate(act, R.layout.labour_details, null);
+				dialog.setView(detailsView);
+				
+				LabourData data=(LabourData)arg1.getTag();
+
+				final EditText qty=(EditText)detailsView.findViewById(R.id.et_labour_margin);
+
+				final EditText et_prod_margin=(EditText)detailsView.findViewById(R.id.et_labour_margin);
+				
+				 
+				//String prodQty=((TextView)arg1.findViewById(R.id.tv__labour_qty)).getText().toString();
+				qty.setText(""+(data).getQty());
+				
+				float margintPerHour=Float.parseFloat(data.getPricePerHour())*data.getMargin()/100;
+				float marginPerDay=Float.parseFloat(data.getPricePerDay())*data.getMargin()/100;
+				
+
+				et_prod_margin.setText(""+(data).getMargin());
+				((TextView)detailsView.findViewById(R.id.tv_price_per_hour)).setText(data.getPricePerHour());
+				((TextView)detailsView.findViewById(R.id.tv_PricePerDay)).setText(data.getPricePerDay());
+				((TextView)detailsView.findViewById(R.id.tv_created_by)).setText(data.getCreatedBy());
+				((TextView)detailsView.findViewById(R.id.tv_labour_name)).setText(data.getLabour());
+				((TextView)detailsView.findViewById(R.id.tv_labour_type)).setText(data.getLabourType());
+				((TextView)detailsView.findViewById(R.id.tv_margin_per_day)).setText(""+marginPerDay);
+				((TextView)detailsView.findViewById(R.id.tv_margin_per_hour)).setText(""+margintPerHour);
+
+				((TextView)detailsView.findViewById(R.id.tv_total_per_day)).setText(""+(marginPerDay+data.getPricePerDay()));
+				((TextView)detailsView.findViewById(R.id.tv_total_per_hour)).setText(""+(margintPerHour+data.getPricePerHour()));
+
+				Button but_update=(Button)detailsView.findViewById(R.id.but_update);
+				but_update.setTag(arg1.getTag());
+				Button but_delete=(Button)detailsView.findViewById(R.id.but_delete);
+				Button but_cancel=(Button)detailsView.findViewById(R.id.but_cancel);
+
+				but_update.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						/*
+						if(qty.getText().toString().length()>0 && et_prod_margin.getText().toString().length()>0)
+						{
+							((LabourData)v.getTag()).qty=qty.getText().toString();
+							((LabourData)v.getTag()).Margin=et_prod_margin.getText().toString();
+							//Toast.makeText(act, "TEST" +((MaterialsData)v.getTag()).Productname, Toast.LENGTH_LONG).show();
+
+							materialAdapter.notifyDataSetChanged();
+							dialog.dismiss();
+						}
+						else{
+							if(qty.getText().toString().length()==0)
+								qty.setError("Invalid");
+							if(et_prod_margin.getText().toString().length()==0)
+								et_prod_margin.setError("Invalid");
+						}
+						*/
+
+					}
+				});
+				but_delete.setTag(arg1.getTag());
+				but_delete.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						addLabourList.remove(((MaterialsData)v.getTag()).index);
+						labourAdapter.notifyDataSetChanged();
+						dialog.dismiss();
+
+					}
+				});
+				but_cancel.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						dialog.dismiss();
+					}
+				});
+
+				dialog.show();
+
+				return false;
+			
+			}
+		});
 	}
 	
 	class LabourAdapter extends BaseAdapter
@@ -235,7 +349,7 @@ public class EstimateActivity  extends BaseActivity {
 			TextView tv__labour_qty=(TextView)view.findViewById(R.id.tv__labour_qty);
 			TextView tv_labour_cost_per_day_hour=(TextView)view.findViewById(R.id.tv_labour_cost_per_day_hour);
 			TextView tv_labour_margin=(TextView)view.findViewById(R.id.tv_labour_margin);
-			TextView tv_labour_margin_per_day_hour=(TextView)view.findViewById(R.id.tv_labour_margin_per_day_hour);
+			//TextView tv_labour_margin_per_day_hour=(TextView)view.findViewById(R.id.tv_labour_margin_per_day_hour);
 			TextView tv_labour_total_per_day_hour=(TextView)view.findViewById(R.id.tv_labour_total_per_day_hour);
 			
 			labourType.setText(addLabourList.get(position).getLabour());
@@ -243,10 +357,15 @@ public class EstimateActivity  extends BaseActivity {
 			tv__labour_qty.setText(addLabourList.get(position).getQty());
 			tv_labour_cost_per_day_hour.setText(addLabourList.get(position).getPricePerDay()+"/hour \n"+addLabourList.get(position).getPricePerDay()+"/day");
 			
+			
+			float margintPerHour=Float.parseFloat(addLabourList.get(position).getPricePerHour())*addLabourList.get(position).getMargin()/100;
+			float marginPerDay=Float.parseFloat(addLabourList.get(position).getPricePerDay())*addLabourList.get(position).getMargin()/100;
+			addLabourList.get(position).setMargin(20);
 			//Invalid values
 			tv_labour_margin.setText(""+addLabourList.get(position).getMargin());
-			tv_labour_margin_per_day_hour.setText(""+(Integer.parseInt(addLabourList.get(position).getPricePerDay())*addLabourList.get(position).getMargin())/100+"/day"+"\n"+(Integer.parseInt(addLabourList.get(position).getPricePerHour())*addLabourList.get(position).getMargin())/100+"/hour");
-			tv_labour_total_per_day_hour.setText(""+addLabourList.get(position).getMargin());
+			//tv_labour_margin_per_day_hour.setText(""+(Integer.parseInt(addLabourList.get(position).getPricePerDay())*addLabourList.get(position).getMargin())/100+"/day"+"\n"+(Integer.parseInt(addLabourList.get(position).getPricePerHour())*addLabourList.get(position).getMargin())/100+"/hour");
+			tv_labour_total_per_day_hour.setText(""+addLabourList.get(position).getPricePerDay()+marginPerDay+"/day" +"\n"+addLabourList.get(position).getPricePerHour()+margintPerHour+"/hour");
+			
 			
 			return view;
 		}
@@ -437,8 +556,9 @@ public class EstimateActivity  extends BaseActivity {
 			JSONObject obj = null;
 			LabourData data = null;
 			try {
-				arrMaterials = null;
-				arrMaterials = new ArrayList<MaterialsData>();
+				//arrMaterials = null;
+				//arrMaterials = new ArrayList<MaterialsData>();
+				labourList.clear();
 				JSONArray arr = new JSONObject(jsonData)
 				.getJSONArray("viewLaboursResult");
 				for (int i = 0; i < arr.length(); i++) {
@@ -514,6 +634,7 @@ public class EstimateActivity  extends BaseActivity {
 
 		@Override
 		protected void onPostExecute(String result) {
+			
 			items = new String[arrMaterials.size()];
 			boolArray = new boolean[arrMaterials.size()];
 			for (int i = 0; i < boolArray.length; i++) {

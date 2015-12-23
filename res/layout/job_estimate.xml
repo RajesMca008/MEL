@@ -131,8 +131,17 @@
                 android:id="@+id/labor_list_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="45dp"
                 android:layout_below="@id/header_layout2" >
             </ListView>
+
+            <Button
+                android:id="@+id/bt_save_exit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp" android:layout_alignParentBottom="true"
+                android:layout_weight="0.01"
+                android:background="@color/text_blue"
+                android:text="Save and exit" />
         </RelativeLayout>
     </LinearLayout>
 
