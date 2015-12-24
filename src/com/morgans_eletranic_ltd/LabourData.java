@@ -3,7 +3,7 @@ package com.morgans_eletranic_ltd;
 public class LabourData {
 	
 	private String labour="";
-	private String labourType="Day";
+	private String labourType="";
 	private String PricePerDay="";
 	private String PricePerHour="";
 	private String UpdatedBy="";
@@ -13,6 +13,7 @@ public class LabourData {
 	private String LabourCostID="";
 	private String qty="1";
 	private int margin=20;
+	private String priceType="Day";
 	public String getQty() {
 		return qty;
 	}
@@ -78,6 +79,12 @@ public class LabourData {
 	}
 	public void setMargin(int margin) {
 		this.margin = margin;
+	}
+	public String getPriceType() {
+		return priceType;
+	}
+	public void setPriceType(String priceType) {
+		this.priceType = priceType;
 	}
 
 }

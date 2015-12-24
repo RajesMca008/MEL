@@ -25,5 +25,12 @@
         <item>Contractor</item>
         <item>Sub Contractor</item>
     </string-array>
+    
+    
+     <string-array name="labour_type">
+        <item>Day</item>
+        <item>Hour</item>
+        
+    </string-array>
 
 </resources>
