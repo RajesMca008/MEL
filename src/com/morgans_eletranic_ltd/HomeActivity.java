@@ -262,7 +262,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener {
 			holder.tvAddr.setText(data.SiteAddress);
 			holder.tvPhno.setText(data.SiteContactPhone);
 		
-			 
+			 if(data.StartDate!=null && !data.StartDate.equals("null"))
 			holder.tvTime.setText(data.StartDate.split(" ")[1]);
 			holder.tvJobID.setText(data.JobNumber);
 			Log.e("cancel", data.IsCancellationFormRequired);

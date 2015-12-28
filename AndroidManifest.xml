@@ -60,6 +60,7 @@
         <activity android:name="com.morgans_eletranic_ltd.AddJobFiles"   android:screenOrientation="portrait"   android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
         <activity android:name=".EstimateActivity"  android:windowSoftInputMode="adjustNothing"  android:screenOrientation="portrait" 
               android:theme="@android:style/Theme.Light.NoTitleBar"></activity>
+        <activity android:name="ExtrasAndAmends"></activity>
         
     </application>
 

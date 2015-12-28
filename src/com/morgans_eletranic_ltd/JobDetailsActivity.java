@@ -20,18 +20,21 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.morgans_eletranic_ltd.data.Data;
 import com.morgans_eletranic_ltd.data.JobFiles;
 import com.morgans_eletranic_ltd.data.JobNotes;
 import com.morgans_eletranic_ltd.data.JobsData;
 
-public class JobDetailsActivity extends Activity {
+public class JobDetailsActivity extends Activity implements OnClickListener {
 
 	private EditText detail_description = null, short_description = null;
 	private JobsData jobData = null;
@@ -46,6 +49,10 @@ public class JobDetailsActivity extends Activity {
 	private Editor editor = null;
 	ProgressDialog pd;
 	Activity act = JobDetailsActivity.this;
+	private Button bt_extras_and_amends;
+	private Button bt_job_complete_reshedule;
+	private Button bt_exit;
+	private ToggleButton bt_certificate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,14 +74,33 @@ public class JobDetailsActivity extends Activity {
 		tvPhno = (TextView) findViewById(R.id.tvJobs_phno);
 		tvSiteContact = (TextView) findViewById(R.id.tvJobs_sitecontact);
 		tvJobID = (TextView) findViewById(R.id.tvJobs_jobid);
+		bt_extras_and_amends=(Button)findViewById(R.id.bt_extras_and_amends);
+		bt_job_complete_reshedule=(Button)findViewById(R.id.bt_job_complete_reshedule);
+		bt_exit=(Button)findViewById(R.id.bt_exit);
+		bt_certificate=(ToggleButton)findViewById(R.id.bt_certificate);
+
+		bt_job_complete_reshedule.setOnClickListener(this);
+		bt_extras_and_amends.setOnClickListener(this);
+		bt_exit.setOnClickListener(this);
+
+
+		bt_certificate.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// TODO Auto-generated method stub
+
+			}
+		});
+
 
 		tvName.setText(jobData.CustomerName);
 		tvAddr.setText(jobData.SiteAddress);
-		
+
 		Button addEstimate=(Button)findViewById(R.id.add_estimate);
-		
+
 		addEstimate.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
@@ -196,22 +222,22 @@ public class JobDetailsActivity extends Activity {
 			public void onClick(View v) {
 				//new GetJobFilesTask().execute();
 
-Intent intent=new Intent(JobDetailsActivity.this,AddJobFiles.class);
-startActivity(intent);
+				Intent intent=new Intent(JobDetailsActivity.this,AddJobFiles.class);
+				startActivity(intent);
 			}
 		});
 
 		listView = (ListView) findViewById(R.id.jobdetails_listview);
 
 		((ImageView) findViewById(R.id.base_logo))
-				.setOnClickListener(new OnClickListener() {
+		.setOnClickListener(new OnClickListener() {
 
-					@Override
-					public void onClick(View v) {
-						startActivity(new Intent(act, HomeActivity.class)
-								.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-					}
-				});
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(act, HomeActivity.class)
+				.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+			}
+		});
 
 		new GetJobNotesTask().execute();
 	}
@@ -509,6 +535,39 @@ startActivity(intent);
 
 		// Return our string.
 		return String.valueOf(Roman);
+
+	}
+
+	@Override
+	public void onClick(View v) {
+
+
+		switch (v.getId()) {
+		case R.id.bt_job_complete_reshedule:
+
+			Intent intentReshedule=new Intent(JobDetailsActivity.this,JobReshedule.class);
+
+			startActivity(intentReshedule);
+			break;
+
+		case R.id.bt_extras_and_amends:
+
+			Intent intentExtras=new Intent(JobDetailsActivity.this,ExtrasAndAmends.class);
+
+			startActivity(intentExtras);
+			break;
+		case R.id.bt_exit:
+			finish();
+			break;
+		case R.id.job_details_view_materials:
+
+			Intent intentMaterials=new Intent(JobDetailsActivity.this,MaterialsActivity.class);
+
+			startActivity(intentMaterials);
+			break;
+		default:
+			break;
+		}
 
 	}
 }

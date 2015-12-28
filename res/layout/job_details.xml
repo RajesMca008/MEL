@@ -267,7 +267,7 @@
                                         android:layout_height="match_parent" >
 
                                         <Button
-                                            android:id="@+id/bt3"
+                                            android:id="@+id/bt_job_complete_reshedule"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:layout_alignParentTop="true"
@@ -343,7 +343,6 @@
                                     android:layout_centerHorizontal="true"
                                     android:background="@drawable/shape_white_edittext"
                                     android:ems="10"
-                                  
                                     android:gravity="top"
                                     android:hint="" >
                                 </EditText>
@@ -475,22 +474,124 @@
                         android:background="@drawable/shape_white_spinner_gray"
                         android:orientation="vertical" >
 
-                        <Button
-                            android:id="@+id/add_estimate"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="5dp"
-                            android:background="@color/text_blue"
-                            android:minHeight="45dp"
-                            android:textColor="@color/text_white"
-                            android:text="@string/estimate" />
+                       
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal" >
+                            android:orientation="horizontal"
+                            android:weightSum="3" >
 
                             <!-- 4.1.1 -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" >
+
+                                    <Button
+                                        android:id="@+id/add_estimate"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_margin="2dp"
+                                        android:background="@color/text_blue"
+                                        android:minHeight="45dp"
+                                        android:text="@string/estimate"
+                                        android:textColor="@color/text_white" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <!-- 4.1.2 -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" >
+
+                                    <Button
+                                        android:id="@+id/bt_extras_and_amends"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_margin="2dp"
+                                        android:background="@color/text_blue"
+                                        android:minHeight="45dp"
+                                        android:textColor="@color/text_white" 
+                                        android:text="Extras/Amends" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" >
+
+                                    <Button
+                                        android:id="@+id/bt_cancele_form"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_margin="2dp"
+                                        android:background="@color/text_blue"
+                                        android:minHeight="45dp"
+                                        android:textColor="@color/text_white" 
+                                        android:text="Cancellation Form" />
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:weightSum="3" >
+
+                            <!-- 4.1.1 -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal" >
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" >
+
+                                    <ToggleButton
+                                        android:id="@+id/bt_certificate"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_margin="2dp"
+                                        android:background="@color/text_blue"
+                                        android:minHeight="45dp"
+                                        android:textColor="@color/text_white" 
+                                        android:textOn="Certificate ON"
+                                         android:textOff="Certificate OFF"
+                                      />
+                                </RelativeLayout>
+                            </LinearLayout>
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -509,7 +610,10 @@
                                         android:layout_alignParentTop="true"
                                         android:layout_centerHorizontal="true"
                                         android:layout_margin="2dp"
-                                        android:text="View Materials" />
+                                        android:background="@color/text_blue"
+                                        android:minHeight="45dp"
+                                        android:textColor="@color/text_white" 
+                                        android:text="Material List" />
                                 </RelativeLayout>
                             </LinearLayout>
 
@@ -526,13 +630,16 @@
                                     android:layout_height="match_parent" >
 
                                     <Button
-                                        android:id="@+id/job_details_add_materials"
+                                        android:id="@+id/bt_exit"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_alignParentTop="true"
                                         android:layout_centerHorizontal="true"
                                         android:layout_margin="2dp"
-                                        android:text="ADD Materials" />
+                                        android:background="@color/text_blue"
+                                        android:minHeight="45dp"
+                                        android:textColor="@color/text_white" 
+                                        android:text="Return To Home Page" />
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
